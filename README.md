@@ -11,8 +11,8 @@ It's a small application for improving vocabulary by repetition.
 #### Lesson / Words
 
 You can create your own lessons by creating a `YAML` file
-(see [config/lesson1.yml]) and passing its path in `LESSON` env var. The
-default is `config/lesson1.yml`
+(see [config/lesson1.yml](config/lesson1.yml)) and passing its path in `LESSON`
+env var. The default is `config/lesson1.yml`
 
     $ bin/improve_vocabulary LESSON=config/your_lesson.yml
 

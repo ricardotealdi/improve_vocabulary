@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+require_relative '../lib/improve_vocabulary'
+
+times_to_repeat = ENV.fetch('TIMES_TO_REPEAT', 3).to_i
+lesson_file = ENV.fetch(
+  'LESSON',
+  File.expand_path('../../config/lesson1.yml', __FILE__)
+)
+
+data = ImproveVocabulary::LessonLoader.new(lesson_file).fetch_data
+ImproveVocabulary::Lesson.new(times_to_repeat, data).learn
+ImproveVocabulary::Lesson.new(times_to_repeat, data.invert).learn

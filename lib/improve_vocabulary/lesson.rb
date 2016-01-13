@@ -9,7 +9,7 @@ module ImproveVocabulary
 
     def learn
       while !(words = fetcher.give_me).empty?
-        system("clear") or system("cls")
+        print "\e[H\e[2J"
         words.each(&execute)
         puts 'Press RETURN to continue...'
         STDIN.gets.chomp.downcase
